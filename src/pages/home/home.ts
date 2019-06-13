@@ -12,7 +12,7 @@ import { ToastServiceProvider } from "../../providers/toast-service/toast-servic
   templateUrl: "home.html"
 })
 export class HomePage {
-  personList;
+  personList: any;
 
   constructor(
     public navCtrl: NavController,
@@ -28,7 +28,8 @@ export class HomePage {
 
     this.contactService.getPersonList().subscribe(
       (data: any) => {
-        this.personList = data;
+        this.personList = data.data;
+        console.log(this.personList);
       },
       error => {
         this.toastService.present({
@@ -37,8 +38,6 @@ export class HomePage {
         console.log("error: ", error);
       }
     );
-
-    console.log(this.personList);
   }
 
   registerContactPage() {

@@ -3,14 +3,14 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ContactServiceProvider {
-  baseUrl = "http://localhost/";
+  baseUrl = "http://localhost:3000/contacts/";
 
   constructor(public http: HttpClient) {}
 
   getPersonList() {
     const url = this.baseUrl + "get-person";
     console.log(url);
-    return this.http.get(this.baseUrl);
+    return this.http.get(url);
   }
 
   getCompanyList() {
