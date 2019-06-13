@@ -14,6 +14,7 @@ import { ToastServiceProvider } from "../../providers/toast-service/toast-servic
 export class HomePage {
   personList: any;
   companyList: any;
+  allcontactsList: any;
 
   constructor(
     public navCtrl: NavController,
@@ -25,6 +26,7 @@ export class HomePage {
   ionViewDidLoad() {
     this.getPersonContacts();
     this.getCompanyContacts();
+    this.getAllContacts();
   }
 
   getPersonContacts() {
@@ -47,6 +49,21 @@ export class HomePage {
       (data: any) => {
         this.companyList = data.company;
         console.log(this.companyList);
+      },
+      error => {
+        this.toastService.present({
+          message: "Erro ao carregar contatos"
+        });
+        console.log("error: ", error);
+      }
+    );
+  }
+
+  getAllContacts() {
+    this.contactService.getAllContactsList().subscribe(
+      (data: any) => {
+        this.allcontactsList = data.allcontacts;
+        console.log(this.allcontactsList);
       },
       error => {
         this.toastService.present({

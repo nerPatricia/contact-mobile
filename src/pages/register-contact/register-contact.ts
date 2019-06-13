@@ -24,7 +24,7 @@ export class RegisterContactPage {
   confirmRegisterPerson() {
     this.loadingService.present();
 
-    console.log(this.contactData);
+    this.contactData.type = "person";
 
     this.contactService.registerPerson(this.contactData).subscribe(
       (data: any) => {

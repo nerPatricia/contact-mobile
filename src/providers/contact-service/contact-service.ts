@@ -17,6 +17,11 @@ export class ContactServiceProvider {
     return this.http.get(url);
   }
 
+  getAllContactsList() {
+    const url = this.baseUrl + "get-allcontacts";
+    return this.http.get(url);
+  }
+
   registerPerson(person: any) {
     const url = this.baseUrl + "register-person";
     return this.http.post(url, { person });
