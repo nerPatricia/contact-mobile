@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable()
@@ -9,7 +9,6 @@ export class ContactServiceProvider {
 
   getPersonList() {
     const url = this.baseUrl + "get-person";
-    console.log(url);
     return this.http.get(url);
   }
 
@@ -20,7 +19,8 @@ export class ContactServiceProvider {
 
   registerPerson(person: any) {
     const url = this.baseUrl + "register-person";
-    return this.http.post(url, person);
+    console.log(person);
+    return this.http.post(url, { person });
   }
 
   registerCompany(company: any) {

@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>Adicionar contato</ion-title>
     <ion-buttons right>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="confirmRegisterContact()">
         <ion-icon color="green" name="checkmark"></ion-icon>
       </button>
     </ion-buttons>
@@ -40,7 +40,7 @@
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.mail"
+                [(ngModel)]="contactData.email"
                 placeholder="Email"
               ></ion-input>
             </ion-item>
@@ -76,7 +76,7 @@
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.address"
+                [(ngModel)]="contactData.street"
                 placeholder="Logradouro"
               ></ion-input>
             </ion-item>

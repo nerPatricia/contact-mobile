@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController } from "ionic-angular";
+import { NavController, NavParams } from "ionic-angular";
 import { RegisterContactPage } from "../register-contact/register-contact";
 import { RegisterContactCompanyPage } from "../register-contact-company/register-contact-company";
 import { ContactDetailsPage } from "../contact-details/contact-details";
@@ -22,20 +22,26 @@ export class HomePage {
   ) {}
 
   ionViewDidLoad() {
+    this.getContacts();
+  }
+
+  getContacts() {
     this.loadingService.present();
 
     // .finally(() => this.loadingService.dismiss())
 
     this.contactService.getPersonList().subscribe(
       (data: any) => {
-        this.personList = data.data;
+        this.personList = data.person;
         console.log(this.personList);
+        this.loadingService.dismiss();
       },
       error => {
         this.toastService.present({
           message: "Erro ao carregar contatos"
         });
         console.log("error: ", error);
+        this.loadingService.dismiss();
       }
     );
   }
