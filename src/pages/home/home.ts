@@ -13,6 +13,7 @@ import { ToastServiceProvider } from "../../providers/toast-service/toast-servic
 })
 export class HomePage {
   personList: any;
+  companyList: any;
 
   constructor(
     public navCtrl: NavController,
@@ -22,26 +23,36 @@ export class HomePage {
   ) {}
 
   ionViewDidLoad() {
-    this.getContacts();
+    this.getPersonContacts();
+    this.getCompanyContacts();
   }
 
-  getContacts() {
-    this.loadingService.present();
-
-    // .finally(() => this.loadingService.dismiss())
-
+  getPersonContacts() {
     this.contactService.getPersonList().subscribe(
       (data: any) => {
         this.personList = data.person;
         console.log(this.personList);
-        this.loadingService.dismiss();
       },
       error => {
         this.toastService.present({
           message: "Erro ao carregar contatos"
         });
         console.log("error: ", error);
-        this.loadingService.dismiss();
+      }
+    );
+  }
+
+  getCompanyContacts() {
+    this.contactService.getCompanyList().subscribe(
+      (data: any) => {
+        this.companyList = data.company;
+        console.log(this.companyList);
+      },
+      error => {
+        this.toastService.present({
+          message: "Erro ao carregar contatos"
+        });
+        console.log("error: ", error);
       }
     );
   }

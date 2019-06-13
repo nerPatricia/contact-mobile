@@ -14,18 +14,17 @@ export class ContactServiceProvider {
 
   getCompanyList() {
     const url = this.baseUrl + "get-company";
-    return this.http.get(this.baseUrl);
+    return this.http.get(url);
   }
 
   registerPerson(person: any) {
     const url = this.baseUrl + "register-person";
-    console.log(person);
     return this.http.post(url, { person });
   }
 
   registerCompany(company: any) {
     const url = this.baseUrl + "register-company";
-    return this.http.post(url, company);
+    return this.http.post(url, { company });
   }
 
   // updatePerson(person) {

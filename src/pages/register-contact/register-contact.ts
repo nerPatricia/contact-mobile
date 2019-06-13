@@ -21,10 +21,8 @@ export class RegisterContactPage {
 
   ionViewDidLoad() {}
 
-  confirmRegisterContact() {
+  confirmRegisterPerson() {
     this.loadingService.present();
-
-    // .finally(() => this.loadingService.dismiss())
 
     console.log(this.contactData);
 
