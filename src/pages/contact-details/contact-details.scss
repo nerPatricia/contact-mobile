@@ -15,17 +15,9 @@ page-contact-details {
       height: 60px !important;
     }
 
-    h2,
-    p {
+    .text-input {
       color: color($colors, secondary) !important;
-    }
-
-    h2 {
       font-weight: bolder;
-    }
-
-    p {
-      font-size: 1.4rem;
     }
 
     ion-icon {
@@ -36,6 +28,10 @@ page-contact-details {
 
     .item-md.item-block .item-inner {
       border-bottom: none !important;
+    }
+
+    ::placeholder {
+      color: color($colors, light);
     }
   }
 
@@ -70,11 +66,11 @@ page-contact-details {
     border-bottom: 1px solid #dedede !important;
   }
 
-  .item-md.item-input.input-has-focus .item-inner {
-    box-shadow: none;
-  }
-
   ion-item {
     background-color: color($colors, light) !important;
+  }
+
+  .item-md.item-input.input-has-focus .item-inner {
+    box-shadow: none;
   }
 }
