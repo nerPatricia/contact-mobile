@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Adicionar contato</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid no-padding>
+    <!-- <ion-row>
+      <ion-col>
+        <p>
+          <ion-icon name="person" item-left></ion-icon> Informações Pessoais:
+        </p>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+      <ion-col>
+        <ion-card-content class="main-card">
+          <ion-item class="main-card">
+            <ion-avatar item-start>
+              <img src="https://i.imgur.com/y2zanHm.jpg" />
+            </ion-avatar>
+            <h2>Ana</h2>
+            <p>(12)1234-1234</p>
+            <ion-icon name="call" item-right> </ion-icon>
+            <ion-icon name="mail" item-right> </ion-icon>
+          </ion-item>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list class="form">
+          <ion-card-content>
+            <ion-item>
+              <ion-input
+                type="text"
+                [(ngModel)]="contactData.mail"
+                placeholder="Email"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="tel"
+                [(ngModel)]="contactData.birthday"
+                placeholder="Data de Nascimento"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="tel"
+                [(ngModel)]="contactData.cpf"
+                placeholder="CPF"
+              ></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <p><ion-icon name="pin" item-left> </ion-icon> Endereço:</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-card-content>
+            <ion-item>
+              <ion-input
+                type="text"
+                [(ngModel)]="contactData.address"
+                placeholder="Logradouro"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="tel"
+                [(ngModel)]="contactData.number"
+                placeholder="Número"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="text"
+                [(ngModel)]="contactData.complement"
+                placeholder="Complemento"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="tel"
+                [(ngModel)]="contactData.zipcode"
+                placeholder="CEP"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="text"
+                [(ngModel)]="contactData.district"
+                placeholder="Bairro"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="text"
+                [(ngModel)]="contactData.city"
+                placeholder="Municipio"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="text"
+                [(ngModel)]="contactData.state"
+                placeholder="UF"
+              ></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

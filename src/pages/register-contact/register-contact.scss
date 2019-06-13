@@ -1,0 +1,48 @@
+page-register-contact {
+  ion-content {
+    background-color: color($colors, primary) !important;
+  }
+
+  ion-grid {
+    padding-top: 8px !important;
+  }
+
+  p {
+    font-size: 1.3em;
+    color: color($colors, light) !important;
+    margin-left: 14px;
+    margin-bottom: 5px !important;
+    margin-top: 8px !important;
+  }
+
+  ion-icon {
+    margin-right: 5px !important;
+  }
+
+  ion-card-content {
+    margin: 10px !important;
+    padding: 5px !important;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    background-color: color($colors, light) !important;
+  }
+
+  .list-md .item-input.item-input-has-focus:last-child,
+  .list-md .item-input .input-has-focus:last-child,
+  .list-md .item-input:last-child {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: 1px solid #dedede !important;
+  }
+
+  ion-item {
+    background-color: color($colors, light) !important;
+  }
+
+  .item-md.item-input.input-has-focus .item-inner {
+    box-shadow: none;
+  }
+}

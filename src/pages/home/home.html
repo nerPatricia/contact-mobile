@@ -1,14 +1,102 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Contatos
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-grid no-padding>
+    <ion-list>
+      <ion-list-header>
+        A
+      </ion-list-header>
+
+      <ion-item-sliding>
+        <ion-item (click)="contactDetailsPage()">
+          <ion-avatar item-start>
+            <img src="https://i.imgur.com/y2zanHm.jpg" />
+          </ion-avatar>
+          <h2>Ana</h2>
+          <p>(12)1234-1234</p>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="green">
+            <ion-icon name="call"></ion-icon>
+            Ligar
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="orange">
+            <ion-icon name="text"></ion-icon>
+            Mensagem
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="https://i.imgur.com/y2zanHm.jpg" />
+          </ion-avatar>
+          <h2>André</h2>
+          <p>(35)1234-1234</p>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            Ligar
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            Mensagem
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-list-header>
+        B
+      </ion-list-header>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="https://i.imgur.com/y2zanHm.jpg" />
+          </ion-avatar>
+          <h2>Bruna</h2>
+          <p>(12)1234-1234</p>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="green">
+            <ion-icon name="call"></ion-icon>
+            Ligar
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="orange">
+            <ion-icon name="text"></ion-icon>
+            Mensagem
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-fab right bottom>
+      <button ion-fab color="light">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="registerContactCompanyPage()">
+          <ion-label>Pessoa Jurídica</ion-label>
+          <ion-icon name="briefcase"></ion-icon>
+        </button>
+        <button ion-fab (click)="registerContactPage()">
+          <ion-label>Pessoa Física</ion-label>
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-grid>
 </ion-content>
