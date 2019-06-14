@@ -31,7 +31,7 @@
             <p>{{ contact.phone }}</p>
           </ion-item>
           <ion-item-options side="left">
-            <button ion-button color="green">
+            <button ion-button color="green" (click)="call(contact.phone)">
               <ion-icon name="call"></ion-icon>
               Ligar
             </button>
