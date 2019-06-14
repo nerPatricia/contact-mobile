@@ -9,7 +9,24 @@ import { ToastServiceProvider } from "../../providers/toast-service/toast-servic
   templateUrl: "register-contact-company.html"
 })
 export class RegisterContactCompanyPage {
-  contactData: any = {};
+  contactData: any = {
+    name: "",
+    socialname: "",
+    phone: "",
+    email: "",
+    birthday: "",
+    cnpj: "",
+    type: "",
+    address: {
+      street: "",
+      number: "",
+      complement: "",
+      zipcode: "",
+      district: "",
+      city: "",
+      state: ""
+    }
+  };
 
   constructor(
     public navCtrl: NavController,

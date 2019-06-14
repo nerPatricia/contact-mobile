@@ -14,10 +14,11 @@ import { HomePage } from "../pages/home/home";
 import { RegisterContactPage } from "../pages/register-contact/register-contact";
 import { RegisterContactCompanyPage } from "../pages/register-contact-company/register-contact-company";
 import { ContactDetailsPage } from "../pages/contact-details/contact-details";
+import { ContactDetailsCompanyPage } from "../pages/contact-details-company/contact-details-company";
 import { EditContactPage } from "../pages/edit-contact/edit-contact";
 import { ContactServiceProvider } from "../providers/contact-service/contact-service";
-import { LoadingServiceProvider } from '../providers/loading-service/loading-service';
-import { ToastServiceProvider } from '../providers/toast-service/toast-service';
+import { LoadingServiceProvider } from "../providers/loading-service/loading-service";
+import { ToastServiceProvider } from "../providers/toast-service/toast-service";
 
 const pages = [
   MyApp,
@@ -25,6 +26,7 @@ const pages = [
   RegisterContactPage,
   RegisterContactCompanyPage,
   ContactDetailsPage,
+  ContactDetailsCompanyPage,
   EditContactPage
 ];
 

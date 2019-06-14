@@ -3,6 +3,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { RegisterContactPage } from "../register-contact/register-contact";
 import { RegisterContactCompanyPage } from "../register-contact-company/register-contact-company";
 import { ContactDetailsPage } from "../contact-details/contact-details";
+import { ContactDetailsCompanyPage } from "../contact-details-company/contact-details-company";
 import { ContactServiceProvider } from "../../providers/contact-service/contact-service";
 import { LoadingServiceProvider } from "../../providers/loading-service/loading-service";
 import { ToastServiceProvider } from "../../providers/toast-service/toast-service";
@@ -82,7 +83,11 @@ export class HomePage {
     this.navCtrl.push(RegisterContactCompanyPage);
   }
 
-  contactDetailsPage() {
-    this.navCtrl.push(ContactDetailsPage);
+  contactDetailsPage(contact) {
+    if (contact.type == "person") {
+      this.navCtrl.push(ContactDetailsPage, { contact });
+    } else {
+      this.navCtrl.push(ContactDetailsCompanyPage, { contact });
+    }
   }
 }

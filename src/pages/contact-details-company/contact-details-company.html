@@ -1,8 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Adicionar contato</ion-title>
+    <ion-title>Contato</ion-title>
     <ion-buttons right>
-      <button ion-button icon-only (click)="confirmRegisterCompany()">
+      <button ion-button icon-only (click)="deleteCompany()">
+        <ion-icon color="danger" name="trash"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="confirmEditCompany()">
         <ion-icon color="green" name="checkmark"></ion-icon>
       </button>
     </ion-buttons>
@@ -13,10 +16,32 @@
   <ion-grid no-padding>
     <ion-row>
       <ion-col>
-        <p>
-          <ion-icon name="briefcase" item-left></ion-icon> Informações da
-          Empresa:
-        </p>
+        <ion-card-content class="main-card">
+          <ion-item class="main-card">
+            <ion-avatar item-start>
+              <img src="https://i.imgur.com/y2zanHm.jpg" />
+            </ion-avatar>
+            <ion-item
+              class="main-card"
+              style="padding: 0px; margin-bottom: -10px"
+            >
+              <ion-input
+                type="text"
+                placeholder="Nome Fantasia"
+                [(ngModel)]="contactData.name"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="main-card" style="padding: 0px">
+              <ion-input
+                type="text"
+                placeholder="Telefone"
+                [(ngModel)]="contactData.phone"
+              ></ion-input>
+            </ion-item>
+            <ion-icon name="call" item-right> </ion-icon>
+            <ion-icon name="mail" item-right> </ion-icon>
+          </ion-item>
+        </ion-card-content>
       </ion-col>
     </ion-row>
 
@@ -27,22 +52,8 @@
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.name"
-                placeholder="Nome Fantasia"
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input
-                type="text"
                 [(ngModel)]="contactData.socialname"
                 placeholder="Razão Social"
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input
-                type="tel"
-                [(ngModel)]="contactData.phone"
-                placeholder="Telefone"
               ></ion-input>
             </ion-item>
             <ion-item>
@@ -84,49 +95,49 @@
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.address.street"
+                [(ngModel)]="contactData.street"
                 placeholder="Logradouro"
               ></ion-input>
             </ion-item>
             <ion-item>
               <ion-input
                 type="tel"
-                [(ngModel)]="contactData.address.number"
+                [(ngModel)]="contactData.number"
                 placeholder="Número"
               ></ion-input>
             </ion-item>
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.address.complement"
+                [(ngModel)]="contactData.complement"
                 placeholder="Complemento"
               ></ion-input>
             </ion-item>
             <ion-item>
               <ion-input
                 type="tel"
-                [(ngModel)]="contactData.address.zipcode"
+                [(ngModel)]="contactData.zipcode"
                 placeholder="CEP"
               ></ion-input>
             </ion-item>
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.address.district"
+                [(ngModel)]="contactData.district"
                 placeholder="Bairro"
               ></ion-input>
             </ion-item>
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.address.city"
+                [(ngModel)]="contactData.city"
                 placeholder="Municipio"
               ></ion-input>
             </ion-item>
             <ion-item>
               <ion-input
                 type="text"
-                [(ngModel)]="contactData.address.state"
+                [(ngModel)]="contactData.state"
                 placeholder="UF"
               ></ion-input>
             </ion-item>

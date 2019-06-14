@@ -1,4 +1,4 @@
-page-register-contact {
+page-contact-details-company {
   ion-content {
     background-color: color($colors, primary) !important;
   }
@@ -7,16 +7,32 @@ page-register-contact {
     padding-top: 8px !important;
   }
 
-  p {
-    font-size: 1.3em;
-    color: color($colors, light) !important;
-    margin-left: 14px;
-    margin-bottom: 5px !important;
-    margin-top: 8px !important;
-  }
+  .main-card {
+    background-color: rgb(12, 180, 144) !important;
 
-  ion-icon {
-    margin-right: 5px !important;
+    ion-avatar img {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    .text-input {
+      color: color($colors, secondary) !important;
+      font-weight: bolder;
+    }
+
+    ion-icon {
+      padding-right: 5px !important;
+      padding-left: 10px !important;
+      color: color($colors, secondary) !important;
+    }
+
+    .item-md.item-block .item-inner {
+      border-bottom: none !important;
+    }
+
+    ::placeholder {
+      color: color($colors, light);
+    }
   }
 
   ion-card-content {
@@ -24,7 +40,19 @@ page-register-contact {
     padding: 5px !important;
     border-radius: 6px;
     margin-bottom: 16px;
-    background-color: color($colors, light) !important;
+    background-color: color($colors, light);
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: color($colors, light) !important;
+    margin-left: 14px;
+    margin-bottom: 5px !important;
+    margin-top: 8px !important;
+  }
+
+  ion-icon {
+    margin-right: 4px !important;
   }
 
   .list-md .item-input.item-input-has-focus:last-child,

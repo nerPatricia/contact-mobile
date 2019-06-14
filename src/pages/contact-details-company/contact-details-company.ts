@@ -5,10 +5,10 @@ import { LoadingServiceProvider } from "../../providers/loading-service/loading-
 import { ToastServiceProvider } from "../../providers/toast-service/toast-service";
 
 @Component({
-  selector: "page-contact-details",
-  templateUrl: "contact-details.html"
+  selector: "page-contact-details-company",
+  templateUrl: "contact-details-company.html"
 })
-export class ContactDetailsPage {
+export class ContactDetailsCompanyPage {
   contactData: any = {};
 
   constructor(
@@ -23,10 +23,10 @@ export class ContactDetailsPage {
 
   ionViewDidLoad() {}
 
-  deletePerson() {}
+  deleteCompany() {}
 
-  confirmUpdatePerson() {
-    this.contactService.updatePerson(this.contactData).subscribe(
+  confirmEditCompany() {
+    this.contactService.updateCompany(this.contactData).subscribe(
       async (response: any) => {
         this.toastService.present({
           message: "Contato atualizado com sucesso."

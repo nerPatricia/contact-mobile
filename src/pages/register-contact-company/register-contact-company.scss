@@ -45,4 +45,11 @@ page-register-contact-company {
   .item-md.item-input.input-has-focus .item-inner {
     box-shadow: none;
   }
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner,
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner {
+    box-shadow: none !important;
+  }
 }

@@ -1,19 +1,19 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Adicionar contato</ion-title>
+    <ion-title>Contato</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="deletePerson()">
+        <ion-icon color="danger" name="trash"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="confirmUpdatePerson()">
+        <ion-icon color="green" name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-grid no-padding>
-    <!-- <ion-row>
-      <ion-col>
-        <p>
-          <ion-icon name="person" item-left></ion-icon> Informações Pessoais:
-        </p>
-      </ion-col>
-    </ion-row> -->
-
     <ion-row>
       <ion-col>
         <ion-card-content class="main-card">

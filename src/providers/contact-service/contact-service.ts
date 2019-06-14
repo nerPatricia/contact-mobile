@@ -32,14 +32,15 @@ export class ContactServiceProvider {
     return this.http.post(url, { company });
   }
 
-  // updatePerson(person) {
-  //   return this.http.put(url, person);
-  // }
+  updatePerson(person) {
+    const url = this.baseUrl + "update-person/" + person.id;
+    return this.http.put(url, { person });
+  }
 
-  // updateCompany() {
-  //   const url = this.baseUrl + "/register-company";
-  //   return this.http.put(this.baseUrl);
-  // }
+  updateCompany(company) {
+    const url = this.baseUrl + "update-company/" + company.id;
+    return this.http.put(url, { company });
+  }
 
   // deletePerson() {
   //   return this.http.delete(this.baseUrl);
