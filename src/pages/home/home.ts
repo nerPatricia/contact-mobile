@@ -61,8 +61,14 @@ export class HomePage {
       .then(res => console.log("yay!", res))
       .catch(err => {
         this.toastService.present({
-          message: "Você só pode realizar ligações com o app no seu celular."
+          message: "Só é possivel realizar ligações com o app no celular."
         });
       });
+  }
+
+  message() {
+    this.toastService.present({
+      message: "Clicou aqui xD"
+    });
   }
 }

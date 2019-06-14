@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams, AlertController } from "ionic-angular";
+import { CallNumber } from "@ionic-native/call-number";
 import { ContactServiceProvider } from "../../providers/contact-service/contact-service";
 import { ToastServiceProvider } from "../../providers/toast-service/toast-service";
 import Swal from "sweetalert2";
@@ -16,7 +17,8 @@ export class ContactDetailsPage {
     public navParams: NavParams,
     private contactService: ContactServiceProvider,
     private toastService: ToastServiceProvider,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private callNumber: CallNumber
   ) {
     this.contactData = this.navParams.get("contact");
   }
@@ -98,5 +100,22 @@ export class ContactDetailsPage {
         console.log("deletecontact error: ", error);
       }
     );
+  }
+
+  call(phone) {
+    this.callNumber
+      .callNumber("0" + phone, true)
+      .then(res => console.log("yay!", res))
+      .catch(err => {
+        this.toastService.present({
+          message: "Só é possivel realizar ligações com o app no celular."
+        });
+      });
+  }
+
+  message() {
+    this.toastService.present({
+      message: "Clicou aqui xD"
+    });
   }
 }

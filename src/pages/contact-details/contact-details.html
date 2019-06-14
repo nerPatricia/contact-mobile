@@ -39,8 +39,9 @@
                 [brmasker]="{ phone: true }"
               ></ion-input>
             </ion-item>
-            <ion-icon name="call" item-right> </ion-icon>
-            <ion-icon name="mail" item-right> </ion-icon>
+            <ion-icon name="call" item-right (click)="call(contactData.phone)">
+            </ion-icon>
+            <ion-icon name="mail" item-right (click)="message()"> </ion-icon>
           </ion-item>
         </ion-card-content>
       </ion-col>
