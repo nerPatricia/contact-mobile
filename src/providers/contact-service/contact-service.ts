@@ -22,12 +22,12 @@ export class ContactServiceProvider {
     return this.http.get(url);
   }
 
-  registerPerson(person: any) {
+  registerPerson(person) {
     const url = this.baseUrl + "register-person";
     return this.http.post(url, { person });
   }
 
-  registerCompany(company: any) {
+  registerCompany(company) {
     const url = this.baseUrl + "register-company";
     return this.http.post(url, { company });
   }
@@ -42,11 +42,13 @@ export class ContactServiceProvider {
     return this.http.put(url, { company });
   }
 
-  // deletePerson() {
-  //   return this.http.delete(this.baseUrl);
-  // }
+  deletePerson(personId) {
+    const url = this.baseUrl + "delete-person/" + personId;
+    return this.http.delete(url);
+  }
 
-  // deleteCompany() {
-  //   return this.http.delete(this.baseUrl);
-  // }
+  deleteCompany(companyId) {
+    const url = this.baseUrl + "delete-company/" + companyId;
+    return this.http.delete(url);
+  }
 }

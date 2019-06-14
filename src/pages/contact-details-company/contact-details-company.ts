@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import { ContactServiceProvider } from "../../providers/contact-service/contact-service";
 import { LoadingServiceProvider } from "../../providers/loading-service/loading-service";
 import { ToastServiceProvider } from "../../providers/toast-service/toast-service";
@@ -16,14 +16,13 @@ export class ContactDetailsCompanyPage {
     public navParams: NavParams,
     private contactService: ContactServiceProvider,
     private loadingService: LoadingServiceProvider,
-    private toastService: ToastServiceProvider
+    private toastService: ToastServiceProvider,
+    private alertCtrl: AlertController
   ) {
     this.contactData = this.navParams.get("contact");
   }
 
   ionViewDidLoad() {}
-
-  deleteCompany() {}
 
   confirmEditCompany() {
     this.contactService.updateCompany(this.contactData).subscribe(
@@ -34,6 +33,39 @@ export class ContactDetailsCompanyPage {
       },
       error => {
         console.log("updatecontact error: ", error);
+      }
+    );
+  }
+
+  askDelete() {
+    let alert = this.alertCtrl.create({
+      title: "Cancelar",
+      message: "Tem certeza que deseja apagar esse contato?",
+      buttons: [
+        {
+          text: "Não",
+          handler: () => {}
+        },
+        {
+          text: "Sim",
+          handler: () => {
+            this.deleteCompany();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  deleteCompany() {
+    this.contactService.deleteCompany(this.contactData.id).subscribe(
+      async (response: any) => {
+        this.toastService.present({
+          message: "Contato apagado com sucesso."
+        });
+      },
+      error => {
+        console.log("deletecontact error: ", error);
       }
     );
   }
