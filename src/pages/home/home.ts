@@ -5,8 +5,6 @@ import { RegisterContactCompanyPage } from "../register-contact-company/register
 import { ContactDetailsPage } from "../contact-details/contact-details";
 import { ContactDetailsCompanyPage } from "../contact-details-company/contact-details-company";
 import { ContactServiceProvider } from "../../providers/contact-service/contact-service";
-import { LoadingServiceProvider } from "../../providers/loading-service/loading-service";
-import { ToastServiceProvider } from "../../providers/toast-service/toast-service";
 
 @Component({
   selector: "page-home",
@@ -19,57 +17,19 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    private contactService: ContactServiceProvider,
-    private loadingService: LoadingServiceProvider,
-    private toastService: ToastServiceProvider
+    private contactService: ContactServiceProvider
   ) {}
 
   ionViewDidLoad() {
-    this.getPersonContacts();
-    this.getCompanyContacts();
     this.getAllContacts();
-  }
-
-  getPersonContacts() {
-    this.contactService.getPersonList().subscribe(
-      (data: any) => {
-        this.personList = data.person;
-        console.log(this.personList);
-      },
-      error => {
-        this.toastService.present({
-          message: "Erro ao carregar contatos"
-        });
-        console.log("error: ", error);
-      }
-    );
-  }
-
-  getCompanyContacts() {
-    this.contactService.getCompanyList().subscribe(
-      (data: any) => {
-        this.companyList = data.company;
-        console.log(this.companyList);
-      },
-      error => {
-        this.toastService.present({
-          message: "Erro ao carregar contatos"
-        });
-        console.log("error: ", error);
-      }
-    );
   }
 
   getAllContacts() {
     this.contactService.getAllContactsList().subscribe(
       (data: any) => {
         this.allcontactsList = data.allcontacts;
-        console.log(this.allcontactsList);
       },
       error => {
-        this.toastService.present({
-          message: "Erro ao carregar contatos"
-        });
         console.log("error: ", error);
       }
     );

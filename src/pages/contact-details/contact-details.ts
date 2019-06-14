@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams, AlertController } from "ionic-angular";
 import { ContactServiceProvider } from "../../providers/contact-service/contact-service";
-import { LoadingServiceProvider } from "../../providers/loading-service/loading-service";
 import { ToastServiceProvider } from "../../providers/toast-service/toast-service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "page-contact-details",
@@ -15,7 +15,6 @@ export class ContactDetailsPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private contactService: ContactServiceProvider,
-    private loadingService: LoadingServiceProvider,
     private toastService: ToastServiceProvider,
     private alertCtrl: AlertController
   ) {
@@ -25,6 +24,30 @@ export class ContactDetailsPage {
   ionViewDidLoad() {}
 
   confirmUpdatePerson() {
+    if (
+      !this.contactData.name &&
+      !this.contactData.phone &&
+      !this.contactData.email &&
+      !this.contactData.birthday &&
+      !this.contactData.cpf &&
+      !this.contactData.address.street &&
+      !this.contactData.address.number &&
+      !this.contactData.address.complement &&
+      !this.contactData.address.zipcode &&
+      !this.contactData.address.district &&
+      !this.contactData.address.city &&
+      !this.contactData.address.state
+    ) {
+      Swal.fire({
+        title: "Atenção",
+        text: "Você não pode salvar um contato vazio.",
+        type: "warning",
+        backdrop: true,
+        confirmButtonText: "OK"
+      });
+      return;
+    }
+
     this.contactService.updatePerson(this.contactData).subscribe(
       async (response: any) => {
         this.toastService.present({
@@ -32,6 +55,9 @@ export class ContactDetailsPage {
         });
       },
       error => {
+        this.toastService.present({
+          message: "Ocorreu um erro ao salvar contato."
+        });
         console.log("updatecontact error: ", error);
       }
     );
@@ -65,6 +91,9 @@ export class ContactDetailsPage {
         });
       },
       error => {
+        this.toastService.present({
+          message: "Ocorreu um erro ao apagar contato."
+        });
         console.log("deletecontact error: ", error);
       }
     );

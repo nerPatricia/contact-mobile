@@ -8,6 +8,7 @@ import {
   HttpClient,
   HTTP_INTERCEPTORS
 } from "@angular/common/http";
+import { BrMaskerModule } from "brmasker-ionic-3";
 
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
@@ -32,7 +33,12 @@ const pages = [
 
 @NgModule({
   declarations: [...pages],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrMaskerModule,
+    IonicModule.forRoot(MyApp)
+  ],
   bootstrap: [IonicApp],
   entryComponents: [...pages],
   providers: [

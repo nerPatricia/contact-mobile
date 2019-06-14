@@ -33,9 +33,10 @@
             </ion-item>
             <ion-item class="main-card" style="padding: 0px">
               <ion-input
-                type="text"
+                type="tel"
                 placeholder="Telefone"
                 [(ngModel)]="contactData.phone"
+                [brmasker]="{ phone: true }"
               ></ion-input>
             </ion-item>
             <ion-icon name="call" item-right> </ion-icon>
@@ -68,6 +69,7 @@
                 type="tel"
                 [(ngModel)]="contactData.cpf"
                 placeholder="CPF"
+                [brmasker]="{ mask: '000.000.000-00', len: 14 }"
               ></ion-input>
             </ion-item>
           </ion-card-content>
@@ -111,6 +113,7 @@
                 type="tel"
                 [(ngModel)]="contactData.zipcode"
                 placeholder="CEP"
+                [brmasker]="{ mask: '00.000-000', len: 10 }"
               ></ion-input>
             </ion-item>
             <ion-item>
