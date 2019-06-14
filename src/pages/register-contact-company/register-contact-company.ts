@@ -72,9 +72,10 @@ export class RegisterContactCompanyPage {
     this.contactService.registerCompany(this.contactData).subscribe(
       (data: any) => {
         this.loadingService.dismiss();
-        return this.toastService.present({
+        this.toastService.present({
           message: "Contato cadastrado com sucesso"
         });
+        this.navCtrl.pop();
       },
       error => {
         this.toastService.present({

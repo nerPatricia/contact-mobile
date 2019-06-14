@@ -20,7 +20,7 @@ export class HomePage {
     private contactService: ContactServiceProvider
   ) {}
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.getAllContacts();
   }
 

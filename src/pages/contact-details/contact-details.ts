@@ -89,6 +89,7 @@ export class ContactDetailsPage {
         this.toastService.present({
           message: "Contato apagado com sucesso."
         });
+        this.navCtrl.pop();
       },
       error => {
         this.toastService.present({
