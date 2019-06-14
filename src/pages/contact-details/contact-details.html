@@ -63,6 +63,7 @@
                 type="tel"
                 [(ngModel)]="contactData.birthday"
                 placeholder="Data de Nascimento"
+                [brmasker]="{ mask: '00/00/0000', len: 10, type: 'num' }"
               ></ion-input>
             </ion-item>
             <ion-item>
